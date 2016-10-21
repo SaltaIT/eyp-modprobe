@@ -11,9 +11,11 @@ class modprobe(
                             $service_enable        = true,
                           ) inherits modprobe::params{
 
-  class { '::modprobe::install': } ->
-  class { '::modprobe::config': } ~>
-  class { '::modprobe::service': } ->
-  Class['::modprobe']
+  if($modprobe::manage_package)
+  {
+    package { $modprobe::params::package_name:
+     ensure => $modprobe::package_ensure,
+    }
+  }
 
 }

@@ -1,5 +1,7 @@
 class modprobe::params {
 
+  $package_name='module-init-tools'
+
   case $::osfamily
   {
     'redhat':
