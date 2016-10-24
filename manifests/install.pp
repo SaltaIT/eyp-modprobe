@@ -1,9 +1,10 @@
 define modprobe::install(
+                          $filename   = $name,
                           $modulename = $name,
-                          $command = '/bin/false'
+                          $command    = '/bin/false'
                         ) {
 
-  file { "/etc/modprobe.d/${modulename}.conf":
+  file { "/etc/modprobe.d/${filename}.conf":
     ensure  => 'present',
     owner   => 'root',
     group   => 'root',
