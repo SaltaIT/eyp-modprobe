@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.1
+## 0.1.2
 
 * fixed package name for RHEL7
 
