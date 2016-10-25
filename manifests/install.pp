@@ -1,7 +1,7 @@
 define modprobe::install(
                           $filename   = $name,
                           $modulename = $name,
-                          $command    = '/bin/false'
+                          $command    = '/bin/true'
                         ) {
 
   file { "/etc/modprobe.d/${filename}.conf":
