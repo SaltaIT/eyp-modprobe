@@ -1,7 +1,5 @@
 class modprobe::params {
 
-
-
   case $::osfamily
   {
     'redhat':
