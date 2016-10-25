@@ -1,6 +1,6 @@
 class modprobe::params {
 
-  $package_name='module-init-tools'
+
 
   case $::osfamily
   {
@@ -8,8 +8,13 @@ class modprobe::params {
     {
       case $::operatingsystemrelease
       {
-        /^[5-7].*$/:
+        /^[5-6].*$/:
         {
+          $package_name='module-init-tools'
+        }
+        /^7.*$/:
+        {
+          $package_name='kmod'
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
