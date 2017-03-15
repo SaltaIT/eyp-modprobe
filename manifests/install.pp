@@ -5,7 +5,7 @@ define modprobe::install(
                           $order      = '00',
                         ) {
 
-  if(!defined(Concat[""/etc/modprobe.d/${filename}.conf""]))
+  if(! defined(Concat["/etc/modprobe.d/${filename}.conf"]))
   {
     concat { "/etc/modprobe.d/${filename}.conf":
       ensure  => 'present',
