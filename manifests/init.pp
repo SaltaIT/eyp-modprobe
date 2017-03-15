@@ -14,7 +14,7 @@ class modprobe(
   if($modprobe::manage_package)
   {
     package { $modprobe::params::package_name:
-      ensure => $modprobe::package_ensure,
+      lensure => $modprobe::package_ensure,
     }
   }
 
