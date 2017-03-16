@@ -27,6 +27,7 @@ class modprobe::params {
           {
             /^14.*$/:
             {
+              $package_name='kmod'
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }

@@ -2,7 +2,7 @@
 
 ## 0.1.4
 
-* modprobe::install modified to use concat to allow multiple installs using a single file
+* **modprobe::install** modified to use concat to allow multiple installs using a single file
 
 ## 0.1.3
 
