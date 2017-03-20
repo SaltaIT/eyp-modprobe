@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.5
+
+* added *ensure* to **modprobe::install**
+
 ## 0.1.4
 
 * **modprobe::install** modified to use concat to allow multiple installs using a single file

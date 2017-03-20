@@ -1,4 +1,5 @@
 define modprobe::install(
+                          $ensure     = 'present',
                           $filename   = $name,
                           $modulename = $name,
                           $command    = '/bin/true',
@@ -8,7 +9,7 @@ define modprobe::install(
   if(! defined(Concat["/etc/modprobe.d/${filename}.conf"]))
   {
     concat { "/etc/modprobe.d/${filename}.conf":
-      ensure  => 'present',
+      ensure  => $ensure,
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
@@ -16,12 +17,12 @@ define modprobe::install(
     }
   }
 
-  concat::fragment{ "/etc/modprobe.d/${filename}.conf ${modulename}":
-    target  => "/etc/modprobe.d/${filename}.conf",
-    order   => $order,
-    content => "install ${modulename} ${command}\n",
+  if($ensure == 'present')
+  {
+    concat::fragment{ "/etc/modprobe.d/${filename}.conf ${modulename}":
+      target  => "/etc/modprobe.d/${filename}.conf",
+      order   => $order,
+      content => "install ${modulename} ${command}\n",
+    }
   }
-
-
-
 }
