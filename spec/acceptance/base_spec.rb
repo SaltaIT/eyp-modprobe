@@ -34,6 +34,11 @@ describe 'modprobe class' do
       modprobe::install { 'vfat':
         filename => 'CIS',
       }
+      modprobe::option { 'ipv6':
+        option => 'disable',
+        option_value => '1',
+        filename => 'CIS',
+      }
       EOF
 
       # Run it twice and test for idempotency

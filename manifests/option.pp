@@ -6,6 +6,8 @@ define modprobe::option(
                           $modulename   = $name,
                           $order        = '00',
                         ) {
+  include ::modprobe
+  
   if(! defined(Concat["/etc/modprobe.d/${filename}.conf"]))
   {
     concat { "/etc/modprobe.d/${filename}.conf":
