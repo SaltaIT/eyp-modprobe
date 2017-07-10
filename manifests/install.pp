@@ -19,7 +19,7 @@ define modprobe::install(
 
   if($ensure == 'present')
   {
-    concat::fragment{ "/etc/modprobe.d/${filename}.conf ${modulename}":
+    concat::fragment{ "/etc/modprobe.d/${filename}.conf install ${modulename}":
       target  => "/etc/modprobe.d/${filename}.conf",
       order   => $order,
       content => "install ${modulename} ${command}\n",

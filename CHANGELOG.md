@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.6
+
+* added **modprobe::option** to add options a modules
+
 ## 0.1.5
 
 * added *ensure* to **modprobe::install**
