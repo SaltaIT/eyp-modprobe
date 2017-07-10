@@ -1,3 +1,4 @@
+# puppet2sitepp @modprobeoptions
 define modprobe::option(
                           $option,
                           $option_value = undef,

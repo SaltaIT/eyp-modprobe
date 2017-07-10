@@ -1,3 +1,4 @@
+# puppet2sitepp @modprobeinstall
 define modprobe::install(
                           $ensure     = 'present',
                           $filename   = $name,
