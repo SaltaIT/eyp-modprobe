@@ -10,7 +10,7 @@ class modprobe::params {
         {
           $package_name='module-init-tools'
         }
-        /^7.*$/:
+        /^[78].*$/:
         {
           $package_name='kmod'
         }
@@ -25,7 +25,7 @@ class modprobe::params {
         {
           case $::operatingsystemrelease
           {
-            /^14.*$/:
+            /^1[468].*$/:
             {
               $package_name='kmod'
             }
